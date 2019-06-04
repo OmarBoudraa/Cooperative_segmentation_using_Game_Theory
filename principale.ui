@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>principale</class>
+ <widget class="QMainWindow" name="principale">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>556</width>
+    <height>378</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>principale</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>561</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollarea">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>559</width>
+       <height>359</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="imageLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>46</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>556</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionOuvrir"/>
+    <addaction name="actionSauvegarder"/>
+    <addaction name="actionImprimer"/>
+    <addaction name="separator"/>
+    <addaction name="actionFermer"/>
+   </widget>
+   <widget class="QMenu" name="menuEdition">
+    <property name="title">
+     <string>Edition</string>
+    </property>
+    <addaction name="actionZoomer_25"/>
+    <addaction name="actionD_zoomer_25"/>
+    <addaction name="actionTaille_normale"/>
+    <addaction name="separator"/>
+    <addaction name="actionAjuster_la_fen_tre"/>
+   </widget>
+   <widget class="QMenu" name="menuS_gmentation">
+    <property name="title">
+     <string>Ségmentation</string>
+    </property>
+    <addaction name="actionGris"/>
+    <addaction name="actionHistogramme"/>
+    <addaction name="actionBruitage_Bruit_Gaussien_ajout"/>
+    <addaction name="actionBruitage_Bruit_de_type_poivre_et_sel_5"/>
+    <addaction name="separator"/>
+    <addaction name="actionD_bruitage_Filtre_Moyenneur_3x3"/>
+    <addaction name="actionD_bruitage_Filtre_Gaussien_3x3"/>
+    <addaction name="actionD_bruitage_Filtre_M_dian_3x3"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionCanny"/>
+    <addaction name="actionContours_Actifs"/>
+    <addaction name="actionCroissance_de_r_gion"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionS_gmentation_coop_rative_TG"/>
+   </widget>
+   <widget class="QMenu" name="menuEvaluation">
+    <property name="title">
+     <string>Evaluation</string>
+    </property>
+    <addaction name="actionEvaluation_des_r_sultats_de_segmentaion"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionA_propos_de_SCG"/>
+    <addaction name="actionA_propos_de_QT"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuEdition"/>
+   <addaction name="menuS_gmentation"/>
+   <addaction name="menuEvaluation"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionOuvrir">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/open.png</normaloff>images/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ouvrir...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSauvegarder">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/save.png</normaloff>images/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sauvegarder...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionImprimer">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/print.png</normaloff>images/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimer...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionZoomer_25">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/zoom-in-24.png</normaloff>images/zoom-in-24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoomer (25%)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionD_zoomer_25">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/zoom-out-24.png</normaloff>images/zoom-out-24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dézoomer (25%)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionTaille_normale">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/normal.png</normaloff>images/normal.png</iconset>
+   </property>
+   <property name="text">
+    <string>Taille normale</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAjuster_la_fen_tre">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Ajuster à la fenêtre</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionFermer">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/close.png</normaloff>images/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fermer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionA_propos_de_SCG">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/help-browser.png</normaloff>images/help-browser.png</iconset>
+   </property>
+   <property name="text">
+    <string>A propos de SCG</string>
+   </property>
+  </action>
+  <action name="actionA_propos_de_QT">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/help-browserq.png</normaloff>images/help-browserq.png</iconset>
+   </property>
+   <property name="text">
+    <string>A propos de QT</string>
+   </property>
+  </action>
+  <action name="actionGris">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/rgbtogray.png</normaloff>images/rgbtogray.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gris...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionHistogramme">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/histogram1.png</normaloff>images/histogram1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Histogramme</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Canny...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionD_bruitage_Filtre_Gaussien_3x3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Débruitage (Filtre Gaussien 3x3)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionContours_Actifs">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Contours Actifs...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionCroissance_de_r_gion">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Croissance de région...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionBruitage_Bruit_Gaussien_ajout">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Bruitage (Bruit Gaussien ajouté) (σ=5)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionS_gmentation_coop_rative_TG">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/24px-Sciences_exactes.svg.png</normaloff>images/24px-Sciences_exactes.svg.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ségmentation coopérative TG...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionEvaluation_des_r_sultats_de_segmentaion">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/eval.png</normaloff>images/eval.png</iconset>
+   </property>
+   <property name="text">
+    <string>Evaluation des résultats de segmentaion</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionD_bruitage_Filtre_Moyenneur_3x3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Débruitage (Filtre Moyenneur 3x3)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionD_bruitage_Filtre_M_dian_3x3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Débruitage (Filtre Médian 3x3)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionBruitage_Bruit_de_type_poivre_et_sel_5">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Bruitage(Bruit de type poivre et sel (5%)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
